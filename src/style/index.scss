@@ -5,4 +5,13 @@
 @import "./mixin.scss";
 body {
   -webkit-app-region: drag;
+  background-color: rgba(0, 0, 0, 0);
+}
+.win {
+  width: 600px;
+  height: 500px;
+  text-align: center;
+  background-color: #f5f8fa;
+  border-radius: 30px;
+  -webkit-app-region: drag;
 }
