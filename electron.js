@@ -9,9 +9,12 @@ let mainWindow;
 
 app.on("ready", () => {
   mainWindow = new BrowserWindow({
-    width: 1024,
-    height: 650,
-    minWidth: 600,
+    width: 600,
+    height: 500,
+    transparent: true,
+    //backgroundColor: "#000000",
+    frame: false,
+    resizable: false,
     webPreferences: {
       nodeIntegration: true,
       enableRemoteModule: true,

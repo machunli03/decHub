@@ -3,3 +3,6 @@
 @import "./common.scss";
 @import "./transition.scss";
 @import "./mixin.scss";
+body {
+  -webkit-app-region: drag;
+}

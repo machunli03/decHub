@@ -1,6 +1,5 @@
 <template>
-  <h2>index</h2>
-<el-button>测试</el-button>
+  <div class="win">DEC Hub</div>
 </template>
 
 <script lang="ts" setup>
@@ -9,7 +8,15 @@
 
 <style lang="scss" scoped>
 
-h2{
-  color:$color;
+body{
+    background-color: rgba(0,0,0,0);
+}
+.win{
+    width: 600px;
+    height: 500px;
+    text-align: center;
+    background-color: #F5F8FA;
+    border-radius: 30px;
+    -webkit-app-region: drag;
 }
 </style>
