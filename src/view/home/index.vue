@@ -1,11 +1,10 @@
 <template>
-  <h2>首页林</h2>
-
+  <h2>index</h2>
+<el-button>测试</el-button>
 </template>
 
 <script lang="ts" setup>
-import User from '@/api/user' 
-console.log(User)
+
 </script>
 
 <style lang="scss" scoped>

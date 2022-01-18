@@ -3,11 +3,13 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted } from '@vue/runtime-core'
+import { onMounted, ref } from '@vue/runtime-core'
 import {getLoginInfo} from '../../api/common'
+import type {ILoginInfo} from '../../api/types/common'
+const list = ref<ILoginInfo['slide']>([])
 onMounted(() => {
-   getLoginInfo().then(res => {
-    
+   getLoginInfo().then(data => {
+    list.value = data.slide
   })
 })
 </script>
