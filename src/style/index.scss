@@ -3,14 +3,27 @@
 @import "./common.scss";
 @import "./transition.scss";
 @import "./mixin.scss";
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+button{
+  border:none;
+  background: none;
+}
 body {
   -webkit-app-region: drag;
   background-color: rgba(0, 0, 0, 0);
+  font-size: 14px;
+  
 }
 .win {
   width: 600px;
   height: 500px;
-  text-align: center;
   background-color: #f5f8fa;
   border-radius: 30px;
   -webkit-app-region: drag;

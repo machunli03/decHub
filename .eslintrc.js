@@ -10,7 +10,9 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["vue", "@typescript-eslint"],
-  rules: {},
+  rules: {
+    "quotes": [1,'single'],
+  },
   overrides: [
     {
       files: ["src/api/**/*.ts"],
