@@ -13,10 +13,16 @@
         剩余30个月
       </div>
     </div>
+    <div class="tips">
+      <p>专业版服务：正在使用</p>
+      <button class="btnNew">续费</button>
+    </div>
     <div class="banner">
       <a href="">了解更多>></a>
     </div>
     <button class="button">开启DEC1.0</button>
+    <div class="freeD">开启免费版DEC</div>
+    <div class="state">DEC1.0支持MAYA2016及以上版本</div>
   </div>
   
 </template>
@@ -75,7 +81,26 @@
       margin-top: 10px;
     }
   }
+  .tips{
+    overflow: hidden;
+    p{
+      color: $gray2;
+      float:left;
+    }
+    .btnNew{
+      width: 70px;
+      height: 20px;
+      border: 1px solid #FB855E;
+      border-radius: 3px;
+      display: block;
+      color: #FB855E;
+      font-size: 12px;
+      line-height: 13px;
+      float: right;
+    }
+  }
   .banner{
+    display: none;
     width:410px;
     height:100px;
     background: url(@/assets/images/banner.jpg) no-repeat;
@@ -89,14 +114,30 @@
   .button{
     width: 236px;
     height: 40px;
+    display: block;
     background: $blue;
     border-radius: 20px;
     margin: 0 auto;
-    position: absolute;
-    bottom: 128px;
-    left: 234px;
     font-size: 16px;
     color:#ffffff;
+    margin-top: 50px;
+    margin-bottom: 19px;
+  }
+  .freeD{
+    display: none;
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: $blue;
+    text-align: center;
+    margin-bottom: 29px;  
+  }
+  .state{
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: #8E9699;
+    text-align: center;
   }
 }
 </style>

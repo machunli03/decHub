@@ -1,5 +1,5 @@
 <template>
-  <div class="win">
+  <div class="home">
     <header>
       <h1>DEC Hub</h1>
     </header>
@@ -27,6 +27,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import DecService from '@/components/DecService.vue'
+import Support from '@/components/Support.vue'
 const tabPosition = ref('left')
 
 const mes = ref(67)
@@ -36,8 +37,9 @@ const num = ref(0);
 
 <style lang="scss" scoped>
 
-.win{
+.home{
   color: $gray2;
+  position: relative;
   header{
     height:79px;
     border-bottom: 1px solid #D8E6EF;
@@ -56,6 +58,7 @@ const num = ref(0);
       padding-left:20px;
       font-family: Microsoft YaHei;
       float:left;
+      text-align: center;
       li{
         -webkit-app-region: no-drag;
         cursor: pointer;

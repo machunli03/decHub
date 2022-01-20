@@ -1,13 +1,12 @@
 <template>
-  <div class="DecService">
-    <div class="topInformation">
-      <div class="headPortrait"><img src="https://img.yasuotu.com/yasuotu/images/logo.png" alt=""/></div>
-      <div class="userName">
-        <p>887676666666666666666666666666</p>
-        
-      </div>
-    </div>
-
+  <div class="Support">
+    <ul>
+      <li><a href="">常见问题</a><i>></i></li>
+      <li><a href="">官网介绍</a><i>></i></li>
+      <li><a href="">联系客服</a><i>></i></li>
+      <li><a href="">检查更新DEC Hub</a></li>
+    </ul>
+    <div class="version">DEC Hub 1.0</div>
   </div>
   
 </template>
@@ -18,28 +17,25 @@
 </script>
 
 <style lang="scss" scoped>
-.DecService{
-  box-sizing:border-box;
-  width: 483px;
-  padding: 36px 30px 32px 25px;
-  .headPortrait{
-    float:left;
-    img{
-      width:36px;
-      height:36px;
-      display: block;
-      background: rgba(213, 216, 217, 0.3);
-      border: 1px solid #8C9092;
-      border-radius: 50%;
-
+.Support{
+  width: 392px;
+  padding: 36px 40px 30px 20px;
+  
+  ul{
+    li{
+      margin-bottom: 28px;
+      display: flex;
+      a{
+        flex: 1;
+      }
     }
   }
-  .userName{
-    float:left;
-    p{
-      font-size: 14px;
-      color: $gray1;
-    }
+  .version{
+    text-align: center;
+    position: absolute;
+    left: 60%;
+    transform: translate(-50%,0);
+    bottom: 50px;
   }
 }
 </style>

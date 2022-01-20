@@ -1,5 +1,8 @@
 <template>
-  <router-view/>
+<div class="win">
+   <router-view/>
+</div>
+ 
 </template>
 
 <script lang="ts">
