@@ -11,7 +11,7 @@
       </ul>
       <div class="tab-content">
         <div v-show="num==0"><DecService/></div>
-        <div v-show="num==1">677</div>
+        <div v-show="num==1">{{ $t('message.hello') }}</div>
         <div v-show="num==2">899</div>
       </div>
       <!-- <el-tabs :tab-position="tabPosition" style="height: 200px">

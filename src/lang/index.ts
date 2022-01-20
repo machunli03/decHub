@@ -1,1 +1,19 @@
-//https://www.cnblogs.com/moguzi12345/p/14830877.html  中英文切换案例
+import { createI18n } from 'vue-i18n'
+
+const i18n = createI18n({
+  locale: 'chs', // set locale
+  messages: {
+    chs: {
+      message: {
+        hello: '你好世界',
+      },
+    },
+    eng: {
+      message: {
+        hello: 'hello world',
+      },
+    },
+  },
+})
+
+export default i18n
