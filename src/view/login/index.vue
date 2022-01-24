@@ -26,9 +26,9 @@ import {getLoginInfo} from '../../api/common'
 import type {ILoginInfo} from '../../api/types/common'
 const list = ref<ILoginInfo['slide']>([])
 onMounted(() => {
-   getLoginInfo().then(data => {
-    list.value = data.slide
-  })
+  //  getLoginInfo().then(data => {
+  //   list.value = data.slide
+  // })
 })
 const num = ref(0);
 </script>
