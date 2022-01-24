@@ -11,9 +11,10 @@
       </ul>
       <div class="tab-content">
         <div v-show="num==0"><DecService/></div>
-        <div v-show="num==1">{{ $t('message.hello') }}</div>
-        <div v-show="num==2">899</div>
+        <div v-show="num==1"><DeviceManage/></div>
+        <div v-show="num==2"><Support/></div>
       </div>
+      <!--<div>{{ $t('message.hello') }}</div>-->
       <!-- <el-tabs :tab-position="tabPosition" style="height: 200px">
         <el-tab-pane label="DEC服务"><DecService/></el-tab-pane>
         <el-tab-pane label="设备管理">{{mes}}</el-tab-pane>
@@ -27,6 +28,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import DecService from '@/components/DecService.vue'
+import DeviceManage from '@/components/DeviceManage.vue'
 import Support from '@/components/Support.vue'
 const tabPosition = ref('left')
 
@@ -39,7 +41,7 @@ const num = ref(0);
 
 .home{
   color: $gray2;
-  position: relative;
+  
   header{
     height:79px;
     border-bottom: 1px solid #D8E6EF;
@@ -75,8 +77,11 @@ const num = ref(0);
     }
     .tab-content{
       float:left;
+      position: relative;
+      height: 390px;
     }
   }
+  
 }
 </style>
 

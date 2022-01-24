@@ -138,6 +138,10 @@
     font-weight: 400;
     color: #8E9699;
     text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    bottom: 0;
   }
 }
 </style>

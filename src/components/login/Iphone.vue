@@ -2,15 +2,25 @@
   <div class="Code">
     <div class="iphone">
       <i></i>
-      <input class="dety" type="text"  placeholder="输入手机号" autocomplete="off" value="" maxlength="25" />
+      <el-input v-model="input" placeholder="输入邮箱或者手机号" clearable />
+      <!--<input class="dety" type="text"  placeholder="输入手机号" autocomplete="off" value="" maxlength="25" />-->
     </div>
     <div class="validation">
       <i></i>
       <div class="password">
-        <input class="dety" type="password"  placeholder="输入密码" autocomplete="off" value="" maxlength="25" />
-        <a href="javascript:;" class="paHide paShow"></a>
+        <el-input
+          v-model="input"
+          type="password"
+          placeholder="输入密码"
+          show-password
+        />
+        <!--<input class="dety" type="password"  placeholder="输入密码" autocomplete="off" value="" maxlength="25" />
+        <a href="javascript:;" class="paHide paShow"></a>-->
       </div>
     </div>
+
+    
+
     <button class="btn">登 录</button>
     
   </div>
@@ -19,14 +29,17 @@
 </template>
 
 <script lang="ts" setup>
-
-
+import { ref } from 'vue'
+const input = ref('')
 </script>
 
 <style lang="scss" scoped>
 .Code{
    width: 330px;
   margin: 0 auto;
+  input{
+    -webkit-app-region: no-drag;
+  }
   .iphone,.validation{
     margin-top: 40px;
     display: flex;
@@ -61,7 +74,7 @@
     }
     .password{
       width: 100%;
-      border-bottom: 1px solid #8ca6ae;
+      //border-bottom: 1px solid #8ca6ae;
       display: flex;
       input{
         flex: 1;
@@ -102,6 +115,7 @@
   margin-bottom: 20px;
   a{
     color: $blue;
+    -webkit-app-region: no-drag;
   }
 }
 </style>

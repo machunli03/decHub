@@ -2,7 +2,7 @@
   <div class="Code">
     <div class="iphone">
       <i></i>
-      <input class="dety" type="text"  placeholder="输入手机号" autocomplete="off" value="" maxlength="25" />
+      <el-input v-model="input" placeholder="输入手机号" clearable />
     </div>
     <div class="validation">
       <i></i>
@@ -17,7 +17,8 @@
 </template>
 
 <script lang="ts" setup>
-
+import { ref } from 'vue'
+const input = ref('')
 
 </script>
 
@@ -25,6 +26,9 @@
 .Code{
    width: 330px;
   margin: 0 auto;
+  input{
+    -webkit-app-region: no-drag;
+  }
   .iphone,.validation{
     margin-top: 40px;
     display: flex;
@@ -91,6 +95,7 @@
   margin-bottom: 20px;
   a{
     color: $blue;
+    -webkit-app-region: no-drag;
   }
 }
 </style>

@@ -11,7 +11,7 @@
       <div class="tab-content">
         <div v-show="num==0"><Code/></div>
         <div v-show="num==1"><Iphone/></div>
-        <div v-show="num==2">999</div>
+        <div v-show="num==2"><Lan/></div>
       </div>
     </div>
   </div>
@@ -20,6 +20,7 @@
 <script lang="ts" setup>
 import Code from '@/components/login/Code.vue'
 import Iphone from '@/components/login/Iphone.vue'
+import Lan from '@/components/login/Lan.vue'
 import { onMounted, ref } from '@vue/runtime-core'
 import {getLoginInfo} from '../../api/common'
 import type {ILoginInfo} from '../../api/types/common'
@@ -81,7 +82,9 @@ const num = ref(0);
       background: #c8e8fa;
     }
     .tab-content{
-      
+       &:deep(input){
+        -webkit-app-region: no-drag;
+      }
     }
   }
 
