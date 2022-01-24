@@ -29,3 +29,4 @@ app.on("ready", () => {
   // const menu = Menu.buildFromTemplate(menuTemp)
   // Menu.setApplicationMenu(menu)
 });
+

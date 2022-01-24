@@ -5,11 +5,11 @@ const routes: RouteRecordRaw[] = [
     name: 'home',
     component: () => import('@/view/home/index.vue')
   },
-  // {
-  //   path: '/login',
-  //   name: 'login',
-  //   component: () => import('@/view/login/index.vue')
-  // }
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/view/login/index.vue')
+  }
 ]
 const router = createRouter({
   history: createWebHashHistory(), //路由模式
