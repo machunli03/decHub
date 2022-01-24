@@ -84,7 +84,16 @@ const num = ref(0);
     .tab-content{
        &:deep(input){
         -webkit-app-region: no-drag;
+        border: none;
+        background: none;
+        border-bottom: 1px solid #8ca6ae;
+        border-radius: 0;
+        height: 25px;
+        line-height: 25px;
       }
+       &:deep(input)::-webkit-input-placeholder{
+         color: $gray2;
+       }
     }
   }
 
