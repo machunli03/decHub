@@ -10,9 +10,18 @@ import { ILoginInfo } from "./types/common";
 //   data: T
 // }
 
-export const getLoginInfo = () =>{
+export const accountLogin = (query :any) => {
+  return request<ILoginInfo>({
+    method: 'post',
+    url: '/api/login?' + query
+  })
+}
+
+
+export const getUserInfo = () => {
   return request<ILoginInfo>({
     method: 'GET',
-    url: '/login/info'
+    url: '/get/service/limit'
   })
-} 
+}
+

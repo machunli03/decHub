@@ -1,17 +1,17 @@
 <template>
   <div class="DecService">
     <div class="topInformation">
-      <div class="headPortrait"><img src="https://img.yasuotu.com/yasuotu/images/logo.png" alt=""/></div>
+      <div class="headPortrait">
+        <img src="https://img.yasuotu.com/yasuotu/images/logo.png" alt="" />
+      </div>
       <div class="joinusRt">
         <div class="userName">
           <p>135778876y66</p>
-          <img src="@/assets/images/icon-exit.png" alt=""/>
+          <img src="@/assets/images/icon-exit.png" alt="" />
         </div>
         <p>免费版用户</p>
       </div>
-      <div class="surplusMath">
-        剩余30个月
-      </div>
+      <div class="surplusMath">剩余30个月</div>
     </div>
     <div class="tips">
       <p>专业版服务：正在使用</p>
@@ -24,49 +24,52 @@
     <div class="freeD">开启免费版DEC</div>
     <div class="state">DEC1.0支持MAYA2016及以上版本</div>
   </div>
-  
 </template>
 
 <script lang="ts" setup>
-
-
+import { getUserInfo } from "../api/common";
+import { ref, onMounted } from "vue";
+onMounted(() => {
+  getUserInfo().then((res) => {
+    console.log(res);
+  });
+});
 </script>
 
 <style lang="scss" scoped>
-.DecService{
-  box-sizing:border-box;
+.DecService {
+  box-sizing: border-box;
   width: 446px;
   padding: 36px 30px 32px 25px;
   overflow: hidden;
-  .topInformation{
+  .topInformation {
     overflow: hidden;
     margin-bottom: 20px;
-    .headPortrait{
-      float:left;
-      margin-right:10px;
-      margin-top:5px;
-      img{
-        width:36px;
-        height:36px;
+    .headPortrait {
+      float: left;
+      margin-right: 10px;
+      margin-top: 5px;
+      img {
+        width: 36px;
+        height: 36px;
         display: block;
         background: rgba(213, 216, 217, 0.3);
-        border: 1px solid #8C9092;
+        border: 1px solid #8c9092;
         border-radius: 50%;
-
       }
     }
-    .joinusRt{
-      float:left;
-      .userName{
+    .joinusRt {
+      float: left;
+      .userName {
         overflow: hidden;
         margin-bottom: 5px;
-        p{
+        p {
           font-size: 14px;
           color: $gray1;
           float: left;
           margin-right: 10px;
         }
-        img{
+        img {
           width: 16px;
           height: 15px;
           display: block;
@@ -74,44 +77,43 @@
           cursor: pointer;
         }
       }
-      
     }
-    .surplusMath{
-      float:right;
+    .surplusMath {
+      float: right;
       margin-top: 10px;
     }
   }
-  .tips{
+  .tips {
     overflow: hidden;
-    p{
+    p {
       color: $gray2;
-      float:left;
+      float: left;
     }
-    .btnNew{
+    .btnNew {
       width: 70px;
       height: 20px;
-      border: 1px solid #FB855E;
+      border: 1px solid #fb855e;
       border-radius: 3px;
       display: block;
-      color: #FB855E;
+      color: #fb855e;
       font-size: 12px;
       line-height: 13px;
       float: right;
     }
   }
-  .banner{
+  .banner {
     display: none;
-    width:410px;
-    height:100px;
+    width: 410px;
+    height: 100px;
     background: url(@/assets/images/banner.jpg) no-repeat;
-    a{
+    a {
       float: right;
       margin-top: 40px;
       margin-right: 5px;
       color: #fff;
     }
   }
-  .button{
+  .button {
     width: 236px;
     height: 40px;
     display: block;
@@ -119,28 +121,28 @@
     border-radius: 20px;
     margin: 0 auto;
     font-size: 16px;
-    color:#ffffff;
+    color: #ffffff;
     margin-top: 50px;
     margin-bottom: 19px;
   }
-  .freeD{
+  .freeD {
     display: none;
     font-size: 16px;
     font-family: Microsoft YaHei;
     font-weight: 400;
     color: $blue;
     text-align: center;
-    margin-bottom: 29px;  
+    margin-bottom: 29px;
   }
-  .state{
+  .state {
     font-size: 12px;
     font-family: Microsoft YaHei;
     font-weight: 400;
-    color: #8E9699;
+    color: #8e9699;
     text-align: center;
     position: absolute;
     left: 50%;
-    transform: translate(-50%,0);
+    transform: translate(-50%, 0);
     bottom: 0;
   }
 }

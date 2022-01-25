@@ -11,3 +11,11 @@ createApp(App)
   .use(store, key)
   .use(ElementPlus)
   .mount('#app')
+
+  import Cookies from "js-cookie";
+  if(Cookies.get('token')){
+    router.push({ path: "/" });
+  }else{
+    router.push({ path: "/login" });
+  }
+  

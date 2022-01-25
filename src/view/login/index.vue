@@ -22,11 +22,11 @@ import Code from '@/components/login/Code.vue'
 import Iphone from '@/components/login/Iphone.vue'
 import Lan from '@/components/login/Lan.vue'
 import { onMounted, ref } from '@vue/runtime-core'
-import {getLoginInfo} from '../../api/common'
+import {getUserInfo} from '../../api/common'
 import type {ILoginInfo} from '../../api/types/common'
 const list = ref<ILoginInfo['slide']>([])
 onMounted(() => {
-  //  getLoginInfo().then(data => {
+  //  getUserInfo().then(data => {
   //   list.value = data.slide
   // })
 })

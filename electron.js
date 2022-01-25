@@ -20,13 +20,13 @@ app.on("ready", () => {
       enableRemoteModule: true,
     },
   });
-
   const urlLocation = isDev ? "http://localhost:3000" : "myUrl"; // myUrl线上地址
-//mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
   mainWindow.loadURL(urlLocation);
-
   // 添加自定义的原生菜单
   // const menu = Menu.buildFromTemplate(menuTemp)
   // Menu.setApplicationMenu(menu)
+  
 });
+
 

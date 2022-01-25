@@ -23,11 +23,10 @@ export default defineConfig({
       //'/foo': 'http://localhost:4567',
       // 选项写法
       '/api': {
-        target: 'http://jsonplaceholder.typicode.com',//代理的目标地址
+        target: 'http://172.16.30.65:3335',//代理的目标地址
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       }
-     
     }
   }
 })
