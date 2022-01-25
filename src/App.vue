@@ -29,28 +29,29 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-
+// import { ipcRenderer } from 'electron'
+const { ipcRenderer } = require('electron')
 export default defineComponent({
   name: 'App',
   components: {},
   mounted () {
-    console.log(1)
+    console.log(electron)
   },
   methods: {
     maxbt () {
-      const ipc = require('electron').ipcRenderer
-      console.log('大')
-      ipc.send('window-max')
+      // const ipc = require('electron').ipcRenderer
+      // console.log('大')
+      ipcRenderer.send('window-max')
     },
     minbt () {
-      const ipc = require('electron').ipcRenderer
-      console.log('小')
-      ipc.send('window-min')
+      // const ipc = require('electron').ipcRenderer
+      // console.log('小')
+       ipcRenderer.send('window-min')
     },
     closebt () {
-      const ipc = require('electron').ipcRenderer
-      console.log('关闭')
-      ipc.send('window-close')
+      // const ipc = require('electron').ipcRenderer
+      // console.log('关闭')
+      ipcRenderer.send('window-close')
     }
   }
 })
