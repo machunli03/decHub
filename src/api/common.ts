@@ -20,8 +20,8 @@ export const accountLogin = (query :any) => {
 
 export const getUserInfo = () => {
   return request<ILoginInfo>({
-    method: 'GET',
-    url: '/get/service/limit'
+    method: 'post',
+    url: '/api/get/service/limit'
   })
 }
 

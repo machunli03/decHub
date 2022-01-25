@@ -2,20 +2,20 @@
   <div class="DecService">
     <div class="topInformation">
       <div class="headPortrait">
-        <img src="https://img.yasuotu.com/yasuotu/images/logo.png" alt="" />
+        <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.51miz.com%2FElement%2F00%2F88%2F08%2F85%2Fd3cf476e_E880885_46de2f2a.png%21%2Fquality%2F90%2Funsharp%2Ftrue%2Fcompress%2Ftrue%2Fformat%2Fpng&refer=http%3A%2F%2Fimg.51miz.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1645696601&t=3018556facedb77d70b0fe9099dc8be6" alt="" />
       </div>
       <div class="joinusRt">
         <div class="userName">
           <p>135778876y66</p>
-          <img src="@/assets/images/icon-exit.png" alt="" />
+          <img v-if="isIplogin" src="@/assets/images/icon-exit.png" alt="" />
         </div>
-        <p>免费版用户</p>
+        <p>{{state.userInfo.serviceType}}用户</p>
       </div>
-      <div class="surplusMath">剩余30个月</div>
+      <div class="surplusMath" v-if="isIplogin">剩余30个月</div>
     </div>
     <div class="tips">
       <p>专业版服务：正在使用</p>
-      <button class="btnNew">续费</button>
+      <button class="btnNew" v-if="isIplogin">续费</button>
     </div>
     <div class="banner">
       <a href="">了解更多>></a>
@@ -28,10 +28,15 @@
 
 <script lang="ts" setup>
 import { getUserInfo } from "../api/common";
-import { ref, onMounted } from "vue";
+import { ref, reactive, onMounted } from "vue";
+const state = reactive({
+  isIplogin: false,
+  userInfo:{}
+});
 onMounted(() => {
   getUserInfo().then((res) => {
     console.log(res);
+    state.userInfo = res.data
   });
 });
 </script>
