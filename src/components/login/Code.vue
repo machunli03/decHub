@@ -74,6 +74,7 @@ const input = ref('')
     }
   }
   .btn{
+    -webkit-app-region: no-drag;
     width: 236px;
       height:40px;
       margin: 0 auto;

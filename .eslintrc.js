@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    node: true,
   },
   extends: ["plugin:vue/vue3-strongly-recommended", "standard"],
   parserOptions: {
@@ -11,7 +12,7 @@ module.exports = {
   },
   plugins: ["vue", "@typescript-eslint"],
   rules: {
-    "quotes": [1,'single'],
+    quotes: [1, "single"],
   },
   overrides: [
     {

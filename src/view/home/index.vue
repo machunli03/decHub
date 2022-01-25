@@ -5,14 +5,35 @@
     </header>
     <div class="tabs">
       <ul>
-        <li @click="num=0" :class="{active : num == 0}">DEC服务</li>
-        <li @click="num=1" :class="{active : num == 1}">设备管理</li>
-        <li @click="num=2" :class="{active : num == 2}">帮助中心</li>
+        <li
+          @click="num=0"
+          :class="{active : num == 0}"
+        >
+          DEC服务
+        </li>
+        <li
+          @click="num=1"
+          :class="{active : num == 1}"
+        >
+          设备管理
+        </li>
+        <li
+          @click="num=2"
+          :class="{active : num == 2}"
+        >
+          帮助中心
+        </li>
       </ul>
       <div class="tab-content">
-        <div v-show="num==0"><DecService/></div>
-        <div v-show="num==1"><DeviceManage/></div>
-        <div v-show="num==2"><Support/></div>
+        <div v-show="num==0">
+          <DecService />
+        </div>
+        <div v-show="num==1">
+          <DeviceManage />
+        </div>
+        <div v-show="num==2">
+          <Support />
+        </div>
       </div>
       <!--<div>{{ $t('message.hello') }}</div>-->
       <!-- <el-tabs :tab-position="tabPosition" style="height: 200px">
@@ -22,7 +43,6 @@
       </el-tabs> -->
     </div>
   </div>
-  
 </template>
 
 <script lang="ts" setup>
@@ -34,14 +54,14 @@ const tabPosition = ref('left')
 
 const mes = ref(67)
 const tabsCon = ref('DecService')
-const num = ref(0);
+const num = ref(0)
 </script>
 
 <style lang="scss" scoped>
 
 .home{
   color: $gray2;
-  
+
   header{
     height:79px;
     border-bottom: 1px solid #D8E6EF;
@@ -61,10 +81,11 @@ const num = ref(0);
       font-family: Microsoft YaHei;
       float:left;
       text-align: center;
+      -webkit-app-region: no-drag;
       li{
         -webkit-app-region: no-drag;
         cursor: pointer;
-        margin-bottom: 52px; 
+        margin-bottom: 52px;
         color: $gray1;
       }
       .active{
@@ -81,9 +102,6 @@ const num = ref(0);
       height: 390px;
     }
   }
-  
+
 }
 </style>
-
-
-
