@@ -40,7 +40,7 @@ const input = ref("");
 const router = useRouter();
 const evetnLogin = () => {
   accountLogin(
-    "grant_type=email_password&email=2815271724@qq.com&password=123456&account_type"
+    "email=2815271724@qq.com&password=123456"
   ).then((res) => {
     console.log(res);
     if (res.code == -1) {
@@ -51,9 +51,6 @@ const evetnLogin = () => {
       router.push({ path: "/" });
     }
   });
-  return {
-    evetnLogin,
-  };
 };
 </script>
 

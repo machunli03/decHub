@@ -35,7 +35,6 @@ const state = reactive({
 });
 onMounted(() => {
   getUserInfo().then((res) => {
-    console.log(res);
     state.userInfo = res.data
   });
 });
