@@ -10,13 +10,18 @@ import { ILoginInfo } from "./types/common";
 //   data: T
 // }
 
-export const accountLogin = (query :any) => {
+export const phoneLogin = (query :any) => {
   return request<ILoginInfo>({
     method: 'post',
-    url: '/api/accountLogin?' + query
+    url: '/api/phoneLogin?' + query
   })
 }
-
+export const emailLogin = (query :any) => {
+  return request<ILoginInfo>({
+    method: 'post',
+    url: '/api/emailLogin?' + query
+  })
+}
 
 export const getUserInfo = () => {
   return request<ILoginInfo>({

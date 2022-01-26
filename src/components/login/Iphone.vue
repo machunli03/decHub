@@ -34,13 +34,13 @@
 import Cookies from "js-cookie";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import { accountLogin } from "../../api/common";
+import { emailLogin } from "../../api/common";
 import func from "vue-temp/vue-editor-bridge";
 const input = ref("");
 const router = useRouter();
 const evetnLogin = () => {
-  accountLogin(
-    "grant_type=email_password&email=2815271724@qq.com&password=123456&account_type"
+  emailLogin(
+    "email=2815271724@qq.com&password=123456"
   ).then((res) => {
     console.log(res);
     if (res.code == -1) {

@@ -4,6 +4,7 @@ import router from './router'
 import { store, key } from './store'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
+import Cookies from "js-cookie";
 // 加载全局样式
 import './style/index.scss'
 createApp(App)
@@ -12,7 +13,7 @@ createApp(App)
   .use(ElementPlus)
   .mount('#app')
 
-  import Cookies from "js-cookie";
+
   if(Cookies.get('token')){
     router.push({ path: "/" });
   }else{
