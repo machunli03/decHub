@@ -58,7 +58,7 @@ const express = require('express')
 const request = require('request')
 const appExpress = express()
 const port = 3335
-
+let token = ''
 appExpress.all('*', function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header('Access-Control-Allow-Headers', 'Content-type');
@@ -95,6 +95,8 @@ appExpress.post('/emailLogin', (req, res) => {
       'Authorization': `Basic ${auth}`
     }
   }, (error, response, body) => {
+    token = JSON.parse(body).data.access_token
+    console.log(token)
     res.send(JSON.parse(body));
   })
 })
@@ -117,22 +119,23 @@ appExpress.post('/get/service/limit', (req, res) => {
 })
 
 appExpress.post('/get/iplogin/auth', (req, res) => {
-  let Cookies = getCook(req.headers.cookie)
+  console.log('token')
+  console.log(token)
   request('https://test-dec.virtueal.cn/gateway/v-license-server/license', {
     method: 'post',
     body: JSON.stringify(req.query),
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${Cookies.token}`
+      'Authorization': `Bearer ${token}`
     }
   }, (error, response, body) => {
-    if(response.statusCode == 401 || response.statusCode == 403){
+    if (response.statusCode == 401 || response.statusCode == 403) {
       res.send({
-        code:401,
-        data:'',
-        msg:'鉴权失败'
+        code: 401,
+        data: '',
+        msg: '鉴权失败、请联系主机管理员。从新登录'
       });
-    }else{
+    } else {
       res.send(JSON.parse(body));
     }
   })
