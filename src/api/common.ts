@@ -9,25 +9,52 @@ import { ILoginInfo } from "./types/common";
 //   masg: string
 //   data: T
 // }
-
+/** 
+ * 手机登录
+ */
 export const phoneLogin = (query :any) => {
   return request<ILoginInfo>({
     method: 'post',
     url: '/api/phoneLogin?' + query
   })
 }
-export const emailLogin = (query :any) => {
+/** 
+ * 邮箱登录
+ */
+export const emailLogin = (data :any) => {
   return request<ILoginInfo>({
     method: 'post',
-    url: '/api/emailLogin?' + query
+    url: '/api/emailLogin?',
+    params: data
   })
 }
-
-
-export const iPLogin = (query: any) => {
+/** 
+ * 获取图片验证码
+ */
+export const verificationCode = (data :any) => {
   return request<ILoginInfo>({
     method: 'post',
-    url: '/get/iplogin/auth?' + query
+    url: '/api/verificationCode',
+    params: data
+  })
+}
+/** 
+ * 发送短信验证码
+ */
+export const smsCode = (data :any) => {
+  return request<ILoginInfo>({
+    method: 'post',
+    url: '/api/smsCode',
+    params: data
+  })
+}
+/** 
+ * 手机+短信验证码登录
+ */
+export const mobileCodeLogin = (query :any) => {
+  return request<ILoginInfo>({
+    method: 'post',
+    url: '/api/mobileCodeLogin' + query
   })
 }
 
@@ -38,15 +65,4 @@ export const getUserInfo = () => {
     url: '/api/get/service/limit'
   })
 }
-
-export const ipLogin = (data: any) => {
-  return request<ILoginInfo>({
-    method: 'post',
-    url: '/api/get/iplogin/auth',
-    params: data
-  })
-}
-
-
-
 

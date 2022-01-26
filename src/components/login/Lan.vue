@@ -17,19 +17,13 @@
 
 <script lang="ts" setup>
 import { reactive } from "vue";
-import { ipLogin } from "../../api/common";
 const wmic = require("node-wmic");
 const state = reactive({
   ipValue: "",
   cupId: "",
   SystemName:''
 });
-wmic.CPU().then(([cpu]) => {
-  state.cupId = cpu.ProcessorId;
-  state.SystemName = cpu.SystemName
-  console.log(cpu.ProcessorId); //cup id
-  console.log(cpu.SystemName); //主机名
-});
+
 
 const eventIpLogin = () => {
   if (state.ipValue.length == 0) {
@@ -43,9 +37,6 @@ const eventIpLogin = () => {
     "appCode":"dec",     // appid
     "hostname":state.SystemName
    }
-   ipLogin(data).then((res)=>{
-     console.log(res)
-   })
   
 };
 </script>
