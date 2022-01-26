@@ -44,3 +44,53 @@ app.on("ready", () => {
   // const menu = Menu.buildFromTemplate(menuTemp)
   // Menu.setApplicationMenu(menu)
 });
+
+
+
+
+
+
+
+
+
+//测试  还没有处理router
+const express = require('express')
+const request = require('request')
+const appExpress = express()
+const port = 3335
+const wmic = require('node-wmic');
+wmic.CPU().then(([cpu]) => {
+    console.log(cpu.ProcessorId); //cup id
+    console.log(cpu.SystemName);//主机名
+});
+
+appExpress.all('*', function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Headers', 'Content-type');
+    res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS,PATCH");
+    res.header('Access-Control-Max-Age', 1728000); //预请求缓存20天
+    next();
+});
+// 邮箱登录
+appExpress.post('/login', (req, res) => {
+    const { email, password } = req.query
+    const auth = new Buffer('vdms:vdms').toString('base64')
+    console.log(email, password, auth)
+    request(`https://test-dec.virtueal.cn/gateway/v-oauth-server/oauth/token?grant_type=email_password&email=${email}&password=${password}&account_type`, {
+        method: 'post',
+        body: JSON.stringify(req.query),
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Basic ${auth}`
+        }
+    }, (error, response, body) => {
+        res.send(JSON.parse(body));
+    })
+})
+
+
+
+appExpress.listen(port, () => {
+    console.log(`Server running at  http://127.0.0.1:${port}`)
+
+})
