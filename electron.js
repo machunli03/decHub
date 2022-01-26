@@ -72,7 +72,7 @@ appExpress.all('*', function (req, res, next) {
     next();
 });
 // 邮箱登录
-appExpress.post('/login', (req, res) => {
+appExpress.post('/accountLogin', (req, res) => {
     const { email, password } = req.query
     const auth = new Buffer('vdms:vdms').toString('base64')
     console.log(email, password, auth)
@@ -88,6 +88,28 @@ appExpress.post('/login', (req, res) => {
     })
 })
 
+
+app.post('/get/service/limit', (req, res) => {
+  var Cookies = {};
+  if (req.headers.cookie != null) {
+      req.headers.cookie.split(';').forEach(l => {
+          var parts = l.split('=');
+          Cookies[parts[0].trim()] = (parts[1] || '').trim();
+      });
+  }
+  request('https://test-dec.virtueal.cn/gateway/v-product/get/service/limit', {
+      method: 'post',
+      body: JSON.stringify({
+          "appCode": "dec"
+      }),
+      headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${Cookies.token}`
+      }
+  }, (error, response, body) => {
+      res.send(JSON.parse(body));
+  })
+})
 
 
 appExpress.listen(port, () => {

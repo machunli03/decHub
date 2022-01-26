@@ -13,15 +13,15 @@ import { ILoginInfo } from "./types/common";
 export const accountLogin = (query :any) => {
   return request<ILoginInfo>({
     method: 'post',
-    url: '/api/login?' + query
+    url: '/api/accountLogin?' + query
   })
 }
 
 
 export const getUserInfo = () => {
   return request<ILoginInfo>({
-    method: 'GET',
-    url: '/get/service/limit'
+    method: 'post',
+    url: '/api/get/service/limit'
   })
 }
 
