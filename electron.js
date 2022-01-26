@@ -11,10 +11,10 @@ app.on("ready", () => {
   mainWindow = new BrowserWindow({
     width: 600,
     height: 500,
-    transparent: true,
-    // backgroundColor: "#000000",
-    frame: false,
-    resizable: false,
+    // transparent: true,
+    // // backgroundColor: "#000000",
+    // frame: false,
+    // resizable: false,
     webPreferences: {
       nodeIntegration: true,
       enableRemoteModule: true,
@@ -22,7 +22,7 @@ app.on("ready", () => {
     },
   });
   const urlLocation = isDev ? "http://localhost:3000" : "myUrl"; // myUrl线上地址
-  // mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
   mainWindow.loadURL(urlLocation);
   // 登录窗口最小化
   ipcMain.on("window-min", function () {
@@ -89,7 +89,7 @@ appExpress.post('/accountLogin', (req, res) => {
 })
 
 
-app.post('/get/service/limit', (req, res) => {
+appExpress.post('/get/service/limit', (req, res) => {
   var Cookies = {};
   if (req.headers.cookie != null) {
       req.headers.cookie.split(';').forEach(l => {

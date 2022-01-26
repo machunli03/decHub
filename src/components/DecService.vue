@@ -7,15 +7,15 @@
       <div class="joinusRt">
         <div class="userName">
           <p>135778876y66</p>
-          <img v-if="isIplogin" src="@/assets/images/icon-exit.png" alt="" />
+          <img v-if="state.isIplogin" src="@/assets/images/icon-exit.png" alt="" />
         </div>
         <p>{{state.userInfo.serviceType}}用户</p>
       </div>
-      <div class="surplusMath" v-if="isIplogin">剩余30个月</div>
+      <div class="surplusMath" v-if="state.isIplogin">剩余30个月</div>
     </div>
     <div class="tips">
       <p>专业版服务：正在使用</p>
-      <button class="btnNew" v-if="isIplogin">续费</button>
+      <button class="btnNew" v-if="state.isIplogin">续费</button>
     </div>
     <div class="banner">
       <a href="">了解更多>></a>

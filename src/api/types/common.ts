@@ -1,5 +1,5 @@
 export interface ILoginInfo {
-  a: string
-  b: number
-  slide: string[]
+  // a: string
+  // b: number
+  // slide: string[]
 }
