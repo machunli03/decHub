@@ -44,10 +44,13 @@
 </template>
 
 <script lang="ts" setup>
+import Cookies from "js-cookie";
 import { ref, reactive ,watch, onMounted  } from 'vue'
 import { verificationCode } from "../../api/common";
 import { smsCode } from "../../api/common";
 import { mobileCodeLogin } from "../../api/common";
+import { useRouter } from "vue-router";
+const router = useRouter();
 const loginForm = reactive ({
   iphoneNumber: '',
   iphoneCode: ''
@@ -55,21 +58,52 @@ const loginForm = reactive ({
 const imgCode = ref( false );
 const obtainCode = () => {
   console.log('获取验证码');
-  verificationCode(
-  //  params:{
+  // verificationCode(
+  //   {
+  //     "mobile":"15319709174"
+  //   }
+  // ).then((res) => {
+  //   console.log(res);
+  //   if (res.code == -1) {
+  //     ElMessage.error("登录失败");
+  //   } else {
+  //     let data = res.data;
+  //     //Cookies.set("token", data.access_token);
+  //     //router.push({ path: "/" });
+  //   }
+  // });
 
-  //  }
+  // smsCode(
+  //   {
+  //     "mobile":"15319709174",
+  // 	  "verificationCode":"1234" 
+  //   }
+  // ).then((res) => {
+  //   console.log(res);
+  //   if (res.code == -1) {
+  //     ElMessage.error("登录失败");
+  //   } else {
+  //     let data = res.data;
+  //     //Cookies.set("token", data.access_token);
+  //     //router.push({ path: "/" });
+  //   }
+  // });
+  
+  mobileCodeLogin(
+    {
+      "mobile":"15319709174",
+  	  "code":"123434" 
+    }
   ).then((res) => {
     console.log(res);
     if (res.code == -1) {
       ElMessage.error("登录失败");
     } else {
       let data = res.data;
-      Cookies.set("token", data.access_token);
-      router.push({ path: "/" });
+      //Cookies.set("token", data.access_token);
+      //router.push({ path: "/" });
     }
   });
-  
   return {
     obtainCode,
   };

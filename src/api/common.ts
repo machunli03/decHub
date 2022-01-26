@@ -21,11 +21,10 @@ export const phoneLogin = (query :any) => {
 /** 
  * 邮箱登录
  */
-export const emailLogin = (data :any) => {
+export const emailLogin = (query :any) => {
   return request<ILoginInfo>({
     method: 'post',
-    url: '/api/emailLogin?',
-    params: data
+    url: '/api/emailLogin?' + query
   })
 }
 /** 
@@ -51,10 +50,11 @@ export const smsCode = (data :any) => {
 /** 
  * 手机+短信验证码登录
  */
-export const mobileCodeLogin = (query :any) => {
+export const mobileCodeLogin = (data :any) => {
   return request<ILoginInfo>({
     method: 'post',
-    url: '/api/mobileCodeLogin' + query
+    url: '/api/mobileCodeLogin',
+    params: data
   })
 }
 
