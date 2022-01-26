@@ -6,8 +6,10 @@ const request = axios.create({
 })
 //请求拦截器
 axios.interceptors.request.use(function (config) {
+  console.log(config)
   // 统一设置用户身份 token
-  config.headers!.Authorization = `Bearer ${Cookies.get('token')}`;
+  // config.headers!.Authorization = `Bearer ${Cookies.get('token')}`;
+  console.log(config)
   return config;
 }, function (error) {
   // 对请求错误做些什么
